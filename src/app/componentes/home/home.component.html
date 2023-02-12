@@ -1,0 +1,17 @@
+<div>
+  <h2>Home Page</h2>
+  <button (click)="listar()">Realizar requisição</button>
+  <button (click)="logout()">Logout</button>
+</div>
+<section class="container">
+  <div class="mural" *ngIf="lista.length > 0, else semPensamentos">
+    <div *ngFor="let item of lista">
+      {{item.id}} - {{item.nome}} - {{item.email}} - {{item.telefone}}
+    </div>
+  </div>
+</section>
+<ng-template #semPensamentos>
+  <div>
+      <p>Lista vazia!</p>
+</div>
+</ng-template>
